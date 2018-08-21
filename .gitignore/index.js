@@ -1,8 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const config = require('./config.json');
-const bot = new Discord.Client({disableEveryone: true});
-const size    = config.colors;
+const size    = 12;
 const rainbow = new Array(size);
 
 
@@ -26,11 +24,11 @@ function sin_to_hex(i, phase) {
 
 
 let place = 0;
-const servers = config.servers;
+const servers = "326468593443274754";
 
 function changeColor() {
   for (let index = 0; index < servers.length; ++index) {
-    client.guilds.get(servers[index]).roles.find('name', config.roleName).setColor(rainbow[place])
+    client.guilds.get(servers[index]).roles.find('name', "rainbow").setColor(rainbow[place])
 		.catch(console.error);
     if(place == (size - 1)){
       place = 0;
@@ -42,8 +40,8 @@ function changeColor() {
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.username}!`);
-  if(config.speed < 60){console.log("The minimum speed is 60.000, if this gets abused your bot might get IP-banned"); process.exit(1);}
-  setInterval(changeColor, config.speed);
+  if(600 < 60){console.log("The minimum speed is 60.000, if this gets abused your bot might get IP-banned"); process.exit(1);}
+  setInterval(changeColor, 600);
 });
 
 
