@@ -1,5 +1,4 @@
 {
-	"token": "process.env.TOKEN",
 	"prefix": "!",
 	"servers": [
 		"326468593443274754"
